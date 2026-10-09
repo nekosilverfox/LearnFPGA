@@ -1,7 +1,7 @@
 ---
 title: 频谱分析仪学习笔记
 date: 2026-09-15T08:58:57Z
-lastmod: 2026-09-23T11:25:27Z
+lastmod: 2026-10-09T09:27:49Z
 ---
 
 # 频谱分析仪学习笔记
@@ -42,9 +42,11 @@ $1\text{ Hz}=1\text{ 次/秒}$
 
 频率和“周期”是互为倒数的。周期 $T$ 表示“完成一次完整变化需要多少秒”：
 
-$\boxed{f=\frac{1}{T}}$或者：
+$\boxed{f=\frac{1}{T}}$  
 
-$\boxed{T=\frac{1}{f}}$
+或者：
+
+$\boxed{T=\frac{1}{f}}$  
 
 例如，一个 1 kHz 的信号：$f=1000\text{ Hz}$
 
@@ -145,7 +147,7 @@ $\boxed{1\text{ GHz的信号，一个周期只有1 ns}}$
 
 例如：
 
-$2.4\text{ GHz}=2.4\times10^9\text{ Hz}$
+$2.4\text{ GHz}=2.4\times10^9\text{ Hz}$  
 
 这也是 Wi-Fi、蓝牙等常见无线系统会涉及的频率量级。
 
@@ -219,7 +221,62 @@ $\boxed{ \text{频谱仪：横轴是频率} }$
 
 ![image](image1.png)​
 
-![image](image2.png)
+![image](image2.png)​
+
+> “键控”里的“键”，本质上可以理解成 **电键 / 开关（key）** 。
+>
+> 这个词来自早期电报系统。操作员通过按下、松开电报键：
+>
+> ```text
+> 按下  → 发送一种状态
+> 松开  → 发送另一种状态
+> ```
+>
+> 也就是用“开关”让信号在几个**离散状态**之间切换，所以英文叫：
+>
+> $\boxed{\text{Keying}}$  
+>
+> 中文翻译成“键控”。
+>
+> 在数字通信里也是同样的思想，只不过不再真的用手按电报键，而是用数字比特控制载波参数切换。例如：
+>
+> $0 \rightarrow \text{状态 A}$
+>
+> $1 \rightarrow \text{状态 B}$  
+>
+> 因此：
+>
+> - **ASK** \= Amplitude Shift Keying，幅移键控：在不同幅度之间切换
+> - **FSK** \= Frequency Shift Keying，频移键控：在不同频率之间切换
+> - **PSK** \= Phase Shift Keying，相移键控：在不同相位之间切换
+> - **QPSK**：在 4 个离散相位状态之间切换
+>
+> 例如 BPSK：
+>
+> $0 \rightarrow 0^\circ$  
+>
+> $1 \rightarrow 180^\circ$  
+>
+> QPSK 则可能：
+>
+> $00\rightarrow45^\circ$  
+>
+> $01\rightarrow135^\circ$  
+>
+> $11\rightarrow225^\circ$  
+>
+> $10\rightarrow315^\circ$  
+>
+> 所以“键控”和普通“调制”的一个重要语感区别是：
+>
+>> **调制（Modulation）是更大的概念；**
+>>
+>> **键控（Keying）通常强调数字信息控制载波在若干离散状态之间切换。**
+>>
+>
+> 一句话记：
+>
+> $\boxed{\text{键控 = 用数字比特像“开关”一样切换载波状态}}$
 
 ![image](image3.png)
 
@@ -307,7 +364,7 @@ $\boxed{\text{事件视界改变的是因果结构，而不是给光施加阻力
 
 ![image](image4.png)
 
-![image](image5.png)
+![image](image5.png)​
 
 |频段名称|英文缩写|英文全称|
 | ----------| ----------| --------------------------|
@@ -331,13 +388,13 @@ $\text{Very High} \rightarrow \text{Ultra High} \rightarrow \text{Super High} \r
 ‍
 
 |频段名称|英文缩写|频率范围|基本特性|主要应用|
-| ----------| ----------| -------------------------------------------------------------------------------------------------------------| ---------------------------------------------------------------------------------------------------------------------------------------------| ---------------------------------------------------------------------------------------------------------------------|
+| ----------| ----------| ----------------------------------------------------------------------------------------------------------| ---------------------------------------------------------------------------------------------------------------------------------------------| ---------------------------------------------------------------------------------------------------------------------|
 |甚低频|VLF|3～30 kHz|主要是地波传播，有较好的衍射和透射海水的性能，稳定性和可靠性强|海岸和远航船舶/潜艇间通信、水上导航、固定业务、频率和时间信号，尤其用于国际性长距离无线电导航通信|
 |低频|LF|30～300 kHz|主要是地波传播，有较好的衍射和透射海水的性能，稳定性和可靠性强|中程通信、地下通信、水上导航、固定业务，尤其用于国际性长距离无线电导航通信|
-|**中频**|**MF**|**300～3000 kHz**|**主要是地波传播，稳定性和可靠性强**|**国内广播和导航、固定、移动业务，尤其用于中距离点对点广播和航海**|
-|高频|HF|3～30 <span data-type="text" style="background-color: var(--b3-card-info-background); color: var(--b3-card-info-color);">M</span>Hz|主要是长距离天波通信，但容易受到电离层影响|导航、广播、固定、移动等业务，特别是远程或短程点对点通信、广播和移动通信|
-|甚高频|VHF|30～300 <span data-type="text" style="background-color: var(--b3-card-info-background); color: var(--b3-card-info-color);">M</span>Hz|电离层散射通信一般为 30～60 MHz；人工电离层通信一般为 30～144 MHz；流星余迹通信一般为 30～100 MHz（40～80 MHz 较适合）|导航、电视、FM 广播、雷达、固定和移动业务；短距离和中距离点对点通信、LAN、广播（TV），以及与卫星/导弹等飞行目标通信|
-|特高频|UHF|300～3000 <span data-type="text" style="background-color: var(--b3-card-info-background); color: var(--b3-card-info-color);">M</span>Hz|低容量微波中继系统（8～12 路）一般为 352～420 MHz；中等容量微波中继系统（120 路）一般为 1700～2400 MHz；对流层散射通信一般为 700～10000 MHz|导航、电视、雷达、固定、移动、空间、对流层散射业务；短距离和中等距离点对点通信、LAN、广播（TV）、卫星通信|
+|**中频**|**MF**|**<u>300～3000</u>** **kHz**|**主要是地波传播，稳定性和可靠性强**|**国内广播和导航、固定、移动业务，尤其用于中距离点对点广播和航海**|
+|高频|HF|3～30 **M**Hz|主要是长距离天波通信，但容易受到电离层影响|导航、广播、固定、移动等业务，特别是远程或短程点对点通信、广播和移动通信|
+|甚高频|VHF|30～300 **M**Hz|电离层散射通信一般为 30～60 MHz；人工电离层通信一般为 30～144 MHz；流星余迹通信一般为 30～100 MHz（40～80 MHz 较适合）|导航、电视、FM 广播、雷达、固定和移动业务；短距离和中距离点对点通信、LAN、广播（TV），以及与卫星/导弹等飞行目标通信|
+|特高频|UHF|300～3000 **M**Hz|低容量微波中继系统（8～12 路）一般为 352～420 MHz；中等容量微波中继系统（120 路）一般为 1700～2400 MHz；对流层散射通信一般为 700～10000 MHz|导航、电视、雷达、固定、移动、空间、对流层散射业务；短距离和中等距离点对点通信、LAN、广播（TV）、卫星通信|
 |超高频|SHF|3～30 **G**Hz|大容量微波中继系统（6000 路）一般为 3600～4200 MHz；大容量微波中继系统（2500 路）一般为 5850～8500 MHz|导航、电视、雷达、固定、移动、空间、航空业务；短距离和中等距离点对点通信、LAN、广播（TV）、移动/个人通信、卫星通信|
 |极高频|EHF|30～300 **G**Hz|视距传播|导航、固定、移动、空间业务；短距离点对点、微蜂窝、LAN、移动/个人通信、卫星通信、重返大气层通信|
 |红外线|—|300～4×10⁵ **G**Hz|热效应显著，具有一定的穿透性|遥控、热成像仪、医疗、红外制导导弹等|
@@ -372,12 +429,14 @@ $\lambda=\frac{c}{f}$
 例如：
 
 - 几百 MHz：==绕射==能力较好，覆盖范围容易做大。
-- 2.4 GHz / 5 GHz：Wi-Fi 常用，5 GHz 通常比 2.4 GHz 更容易被墙体衰减。
+- 2.4 GHz / 5 GHz：Wi-Fi 常用，5 GHz 通常比 2.4 GHz **更容易**被墙体衰减。
 - 毫米波，如 28 GHz：波长很短，方向性强，但人体、墙壁、雨水都可能造成明显衰减。
+
+‍
 
 另外，“**信号能量**”和“频率”要区分语境。一个 100 MHz 信号完全可以比一个 10 GHz 信号功率大得多，因为射频系统中的实际信号功率主要还取决于**==振幅和发射功率==**；只有讨论单个光子时，才直接有：
 
-$E=hf$
+$E=hf$  
 
 所以最简洁地记：
 
@@ -385,86 +444,23 @@ $\boxed{\text{频率高} \Leftrightarrow \text{波长短}}$
 
 但：
 
-$\boxed{\text{传播距离、穿透能力不能只由波长单独判断}}$  
+$\boxed{\text{传播距离、穿透能力不能只由波长单独判断}}$
+
+## 振幅A与功率P关系
+
+简单说：
+
+- **振幅** **$A$** 表示信号“有多强”。
+- 对同一阻抗下的信号，**功率** **$P$** **和振幅的平方成正比**：
+
+  $P \propto A^2$
+- 所以<span data-type="text" style="color: var(--b3-font-color13);">振幅变成 2 倍，功率变成 4 倍</span>。
+
+信号穿过墙体时，主要发生的是**振幅衰减** **，也就是信号功率下降**。频率一般不会因为穿墙而改变，但墙体会通过吸收、反射等方式让接收到的振幅变小。
+
+一句话记忆：**墙体衰减的是信号能量/功率，表现为振幅变小。**
 
 ---
-
-# 调制方法
-
-> https://www.youtube.com/watch?v=dWNj1NCEEeo
-
-![Modulation_categorization](image7.svg)
-
----
-
-## PSK
-
-### QPSK 正交相移键控
-
-> QPSK signal generation
->
-> https://www.etti.unibw.de/labalive/experiment/qpsksignalgeneration/
-
-> QPSK 是 **Quadrature Phase Shift Keying**，中文叫 **正交相移键控**，属于一种**数字相位调制**。
-
-![image](image8.png)​
-
-QPSK，四比特相位偏移调制，有时也称作四相位PSK、4-PSK、4-QAM，在坐标图上看是圆上四个对称的点。通过四个相位，QPSK可以编码2比特符号。图中采用[格雷码](https://zh.wikipedia.org/wiki/%E6%A0%BC%E9%9B%B7%E7%A0%81 "格雷码")来达到最小比特差错率（BER） — 是BPSK的两倍. 这意味着可以在BPSK系统[带宽](https://zh.wikipedia.org/wiki/%E5%B8%A6%E5%AE%BD "带宽")不变的情况下增大一倍数据传送速率或者在BPSK数据传送速率不变的情况下将所需带宽减半。
-
-数学分析表明，QPSK既可以在保证相同信号带宽的前提下倍增BPSK系统的数据速率，也可以在保证数据速率的前提下减半BPSK系统的带宽需求。在后一种情况下，QPSK的BER与BPSK系统的BER完全相同。
-
-![QPSK_Gray_Coded](image9.svg)​
-
-QPSK的坐标图，其比特对映符号方式用[格雷码](https://zh.wikipedia.org/wiki/%E6%A0%BC%E9%9B%B7%E7%A0%81 "格雷码")对映。
-
-由于无线电通信的带宽都是由FCC一类部门所事先分配规定的，QPSK较之于BPSK的优势便开始显现出来：QPSK系统在给定的带宽内可以在BER相同的情况下可以提供BPSK系统两倍的带宽。采取QPSK系统在实际工程上的代价是其接收设备要远比BPSK系统的接收设备复杂。然而，随着现代电子技术的迅猛发展，这种代价已经变得微不足道。
-
-较之BPSK系统，QPSK系统在接收端存在相位模糊的问题，所以实际应用中经常采取差分编码QPSK的方式。
-
-QPSK遵循如下公式：
-
-$$
-{\displaystyle s_{n}(t)={\sqrt {\frac {2E_{s}}{T_{s}}}}\cos \left(2\pi f_{c}t+(2n-1){\frac {\pi }{4}}\right),\quad n=1,2,3,4.}
-$$
-
-公式包含π/4、3π/4、5π/4与7π/4四个相位。
-
----
-
-它的核心思想是：
-
-> **不改变载波中心频率，主要通过改变载波的相位来表示数字信息。**
-
-一个载波可以写成：
-
-$s(t)=A\cos(2\pi f_ct+\phi)$  
-
-QPSK 让相位 $\phi$ 取 4 种不同状态，例如：
-
-$45^\circ,\ 135^\circ,\ 225^\circ,\ 315^\circ$
-
-![image](image10.png)​
-
-![qpsk-signal-generation-23](image11.png)
-
-因为有 4 种状态，所以一次可以表示：
-
-$\log_2 4=2\text{ bit}$  
-
-例如：
-
-|比特|相位|
-| ------| ------|
-|00|$45^\circ$​|
-|01|$135^\circ$​|
-|11|$225^\circ$​|
-|10|$315^\circ$​|
-
-因此：
-
-$\boxed{\text{QPSK 每个符号可以携带 2 bit 信息}}$
-
-‍
 
 ---
 
@@ -508,7 +504,13 @@ $P=\frac{1^2}{50}=0.02W=20mW$
 
 再换成 **dBm**：
 
-$\boxed{P_{\mathrm{dBm}}=10\log_{10}\left(\frac{P}{1mW}\right)}$  
+$\boxed{P_{\mathrm{dBm}}=10\log_{10}\left(\frac{P}{1mW}\right)=10\log_{10}\left(\frac{20mW}{1mW}\right)=10\lg{20}=10*1.30103=13.0103 dBm}$  
+
+所以结论是：
+
+$\boxed{1V_{\mathrm{RMS}}\ \text{加在}\ 50\Omega\ \text{负载上} \Rightarrow 13.01\,dBm}$  
+
+要注意：这里的 $1V$ 必须是 **RMS**。如果是 $1V_{\text{peak}}$ 或 $1V_{pp}$，结果会不同。
 
 所以你当前最值得记住的是：
 
@@ -524,7 +526,7 @@ $\boxed{P=\frac{V_{\mathrm{RMS}}^2}{50}}$
 
 ## $V_{\text{peak}}$ 峰值电压
 
-$V_{\text{peak}}$ 就是**峰值电压**，也就是这个正弦波相对于 0V 能达到的最大电压幅度。
+$V_{\text{peak}}$ 就是**峰值电压**，也就是这个**正弦波**相对于  ****  **0V**  ****  能达到的最大电压幅度。
 
 在：
 
@@ -554,7 +556,7 @@ $-1V$
 
 $V_{pp}=2V_{\text{peak}}$  
 
-对于正弦波，还有：
+对于<span data-type="text" style="color: var(--b3-font-color13);">正弦波</span>，还有：
 
 $\boxed{V_{\mathrm{RMS}}=\frac{V_{\text{peak}}}{\sqrt2}}$  
 
@@ -744,7 +746,7 @@ $\boxed{\log(ab)=\log a+\log b}$
 
 例如：
 
-$\lg(100\times1000) = \lg100+\lg1000 = 2+3=5$
+$\lg(100\times1000) = \lg100+\lg1000 = 2+3=5$  
 
 除法变减法
 
@@ -1108,9 +1110,9 @@ $\boxed{-10N\text{ dBm}=10^{-N}\text{ mW}}$
 
 频域描述方式有时域描述方式不具备的优点，可以显示信号的**谐波分量**等，还可以根据信号占用的带宽滤除噪声，提高信号接收的信噪比
 
-![image](image12.png)​
+![image](image7.png)​
 
-![image](image13.png)​
+![image](image8.png)​
 
 信号的**==时域==**描述方式和**==频域==**描述方式为傅里叶变换的关系：
 
@@ -1125,8 +1127,6 @@ $$
 x(t)=F^{-1}\{X(f)\}
 =\int_{-\infty}^{+\infty}X(f)e^{j2\pi ft}\,df
 $$
-
-式（2-2）
 
 其中，$F\{x(t)\}$ 为时域信号 $x(t)$ 的傅立叶变换，$F^{-1}\{X(f)\}$ 为频域信号 $X(f)$ 的傅立叶逆变换
 
@@ -1147,6 +1147,11 @@ $f_{RF}=2.4\text{ GHz}$
 可以写成：
 
 $v(t)=A\cos(2\pi\cdot2.4\text{GHz}\cdot t)$
+
+- $v(t)$：**某一时刻** **$t$** **的瞬时电压**
+- $A$：**振幅**，也就是正弦波的峰值电压 $V_{\text{peak}}$
+- $t$：**时间**，单位通常是秒
+- $2.4\text{ GHz}$：信号频率，也就是每秒振荡 $2.4\times10^9$ 次
 
 它可能来自：
 
@@ -1181,11 +1186,13 @@ $f_{RF}=2.4\text{ GHz}$
 
 $f_{LO}=2.3\text{ GHz}$
 
-> 本振 LO 是 **Local Oscillator，本地振荡器**，它会产生一个==频率可控、较稳定的正弦信号，送入混频器。==
+> 本振 LO 是 **Local Oscillator，本地振荡器**，它会产生一个==频率可控、较稳定的==​==正弦====信号，送入混频器。==
 >
 > 它的主要作用是和输入 RF 信号进行混频，把原本较高的射频信号“搬移”到较低、方便处理的 IF 或基带频率。例如：
 >
-> $2.4\text{ GHz RF} - 2.3\text{ GHz LO}=100\text{ MHz IF}$ 所以可以简单记成：
+> $2.4\text{ GHz RF} - 2.3\text{ GHz LO}=100\text{ MHz IF}$  
+>
+> 所以可以简单记成：
 >
 >> **LO 就是频谱仪内部用来“搬频”的参考信号源。**
 >>
@@ -1228,7 +1235,7 @@ $0\text{ Hz}$
 
 的位置，就得到了**==基带==**。
 
-‍
+---
 
 例如，原本一个信号占据：
 
@@ -1270,13 +1277,11 @@ $-10\text{ MHz}\sim+10\text{ MHz}$
       基带
 ```
 
-这时候通常使用：
+这时候通常使用**IQ 数据表示信号**：
 
 $I(t)+jQ(t)$  
 
-表示信号，也就是你之前见过的 **IQ 数据**。
-
-‍
+表示信号，也就是 **IQ 数据**。
 
 当然，实际仪器里会有专门处理基带的硬件，例如：
 
@@ -1493,6 +1498,272 @@ FFT
 https://zhuanlan.zhihu.com/p/517843859
 ```
 
+## 调制方法
+
+> https://www.youtube.com/watch?v=dWNj1NCEEeo
+
+![Modulation_categorization](image9.svg)
+
+```mermaid
+flowchart TB
+    M[调制方式]
+
+    M --> AC[模拟载波]
+    M --> DC[数字载波]
+
+    AC --> AAD[模拟数据]
+    AC --> ADD[数字数据]
+    DC --> DAD[模拟数据]
+    DC --> DDD[数字数据]
+
+    AAD --> AM[调幅 AM<br/>改变载波幅度]
+    AAD --> FM[调频 FM<br/>改变载波频率]
+    AAD --> PM[调相 PM<br/>改变载波相位]
+
+    ADD --> ASK[幅移键控 ASK<br/>改变载波幅度]
+    ADD --> FSK[频移键控 FSK<br/>改变载波频率]
+    ADD --> PSK[相移键控 PSK<br/>改变载波相位]
+    ADD --> QAM[正交幅度调制 QAM<br/>同时改变载波幅度和相位]
+
+    DAD --> PAM[脉冲幅度调制 PAM<br/>改变脉冲幅度]
+    DAD --> PWM[脉冲宽度调制 PWM<br/>改变脉冲宽度]
+    DAD --> PPM[脉冲位置调制 PPM<br/>改变脉冲位置]
+
+    DDD --> PCM[脉冲编码调制 PCM]
+
+    classDef root fill:#f6b26b,stroke:#7f6000,color:#000,stroke-width:2px;
+    classDef branch fill:#cfe2f3,stroke:#3d85c6,color:#000,stroke-width:1px;
+    classDef type fill:#d9ead3,stroke:#6aa84f,color:#000;
+    classDef method fill:#fce5cd,stroke:#e69138,color:#000;
+
+    class M root;
+    class AC,DC branch;
+    class AAD,ADD,DAD,DDD type;
+    class AM,FM,PM,ASK,FSK,PSK,QAM,PAM,PWM,PPM,PCM method;
+```
+
+*注：IQ 调制不是这张分类图中的独立类别，通常用于实现 QAM、PSK，也可以实现 AM、PM 等调制。*
+
+![](image10.svg)
+
+---
+
+## IQ 信号和正交调制
+
+> https://www.waytoict.com/2023/02/19/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3i-q%E4%BF%A1%E5%8F%B7%E3%80%81%E6%98%9F%E5%BA%A7%E5%9B%BE%E5%92%8C%E7%AC%A6%E5%8F%B7%EF%BC%9F/
+>
+> ‍
+>
+> https://www.allaboutcircuits.com/assets/pdf/radio-frequency-analysis-design.pdf
+>
+> https://www.allaboutcircuits.com/textbook/radio-frequency-analysis-design/radio-frequency-demodulation/understanding-i-q-signals-and-quadrature-modulation/
+
+如果本章没有介绍正交解调，内容就不算完整。不过，在探讨正交解调之前，我们至少需要简要讨论正交调制；而在讨论正交调制之前，我们需要先理解 I/Q 信号。
+
+### 同相与正交
+
+“I/Q”是“同相”（<span data-type="text" style="color: var(--b3-font-color13);">I</span>n-phase）和“正交”（<span data-type="text" style="color: var(--b3-font-color13);">Q</span>uadrature）的缩写。
+
+遗憾的是，这里已经出现了一个术语问题。首先，“同相”和“正交”单独来看都没有意义：
+
+- **相位是相对的，只有相对于另一个信号或某个既定参考点，某个信号才可以称为“同相”或“异相”** 。
+- 此外，“正交”一词既用于描述信号，也用于描述与该信号相关的调制和解调技术。
+
+无论如何，“同相”和“正交”指的是两个频率相同、<span data-type="text" style="color: var(--b3-font-color13);">相位相差 90° 的正弦信号</span>。按照惯例，<span data-type="text" style="color: var(--b3-font-color13);">I 信号是余弦波形</span>，<span data-type="text" style="color: var(--b3-font-color13);">Q 信号是正弦波形</span>。你知道，<span data-type="text" style="color: var(--b3-font-color13);">不带任何额外相位偏移的正弦波，相对于余弦波会偏移 90°</span>。换句话说，<span data-type="text" style="background-color: var(--b3-card-error-background); color: var(--b3-card-error-color);">正弦波和余弦波彼此正交</span>。
+
+理解 I/Q 信号首先要知道：它们始终是进行**幅度**调制，而不是频率调制或相位调制。不过，I/Q 幅度调制不同于第 4 章讨论的 AM 技术：在 I/Q 调制器中，用来调制 I/Q 正弦信号的信号不会经过偏移，使其始终保持为正。换句话说，I/Q 调制会将 I/Q 波形与可能具有负电压值的调制信号相乘，因此这种“幅度”调制也可能造成 180° 的相位偏移。本页稍后会更详细地讨论这一点。
+
+对两个相位相差 90° 的正弦信号进行幅度调制，有什么好处？为什么 I/Q 调制和解调应用如此广泛？请继续阅读。
+
+‍
+
+**将 I 与 Q 相加**
+
+I 信号和 Q 信号单独来看并不十分有趣。有趣之处在于将 I、Q 波形相加。事实证明，只需改变 I、Q 信号的幅度——而且只改变<span data-type="text" style="color: var(--b3-font-color13);">幅度</span>——再将它们相加，就可以实现任何形式的调制。
+
+如果将两个幅度相等的 I、Q 信号相加，结果会是一个正弦信号，其相位恰好位于 I 信号和 Q 信号的相位之间。
+
+![xref_01120](image11.jpeg)​
+
+![image](image12.png)
+
+换句话说，如果把 I 波形的相位视为 0°，把 Q 波形的相位视为 90°，那么两者相加后得到的信号相位就是 45°。如果要用这些 I、Q 信号生成一个调幅波形，只需分别对 I、Q 信号进行幅度调制。显然，如果两个信号都在增大或都在减小，那么将它们相加得到的信号幅度也会增大或减小。不过，必须确保施加在 I 信号和 Q 信号上的幅度调制完全相同；否则，信号就会发生相位偏移。由此便引出了 I/Q 信号传输的下一个特性。
+
+‍
+
+### **从幅度到相位**
+
+以**相移键控形式实现的相位调制**，是现代射频系统中的一项重要技术。改变 I/Q 信号的幅度，就可以方便地实现相位调制。请看下面的图：
+
+![xref_01121](image13.jpeg)
+
+![xref_01129](image14.jpeg)
+
+如图所示，当其中一个波形的幅度相对于另一个波形增大时，相加后的信号会朝幅度较大的波形所对应的相位偏移。这很容易理解：例如，如果去掉 Q 波形，相加结果就会完全转到 I 波形的相位上，因为（显而易见）将 I 波形与零相加，结果仍然与 I 波形完全相同。
+
+根据上面的讨论，似乎 I/Q 信号只能让信号偏移 90°（也就是向两个方向各偏移 45°）：如果将 Q 的幅度降为零，相加结果就会完全转到 I 的相位；如果将 I 的幅度降为零，相加结果就会完全转到 Q 的相位。那么，我们如何用 I/Q 信号实现正交相移键控（QPSK）呢？例如，QPSK 使用的相位值覆盖 270° 的范围。下一节将讨论这个问题。
+
+### 正交调制
+
+“正交调制”指的是<span data-type="text" style="color: var(--b3-font-color13);">基于两个正交信号</span>**相加**<span data-type="text" style="color: var(--b3-font-color13);">来实现的调制</span>。换句话说，它就是基于 I/Q 信号的调制。我们将以 QPSK 为例说明正交调制的工作方式，同时也会看到，I/Q 信号的幅度调制如何产生<span data-type="text" style="color: var(--b3-font-color13);">超过</span> 90° 的相位偏移。
+
+![xref_01130](image15.jpeg)
+
+这是一个 QPSK 调制器的基本框图。首先，对数字数据流进行处理，使连续的两个比特变成两个并行比特。这两个比特会同时传输；换句话说，正如本页前面提到的，QPSK 允许一个符号传输两个比特。
+
+本地振荡器产生载波正弦信号。**振荡器信号本身用作 I 载波**，再经过 90° 相移后生成 Q 载波。I、Q 载波**分别**与 I、Q 数据流相乘，然后将这两个乘积信号相加，生成经过 QPSK 调制的波形。
+
+> **相乘**：数据符号对载波进行<u>幅度加权</u>和<u>正负翻转</u>，决定<u>各支路</u>的**幅度与相位**；与载波相乘还会把频谱搬移到载波频率附近。
+>
+> **相加**：将正交的 I、Q 分量合成为一个信号，决定最终的**合成幅度和相位**；理想情况下不改变载波中心频率，只叠加各分量的频谱。
+
+I、Q 数据流分别对 I、Q 载波进行幅度调制；如上所述，这种单独的幅度调制可以在最终信号中产生相位调制。如果 I、Q 数据流是从地电位 *（地电位就是电路中约定为* ***0 伏的参考电压点***​ *，通常接地，用来比较其他点的电压）* 变化到某个正电压的普通数字信号，那么我们对 I、Q 载波施加的就是<span data-type="text" style="color: var(--b3-font-color13);">通断键控（OOK, O</span>[n-Off Keying](https://www.allaboutcircuits.com/textbook/radio-frequency-analysis-design/radio-frequency-modulation/digital-modulation-amplitude-and-frequency/)​<span data-type="text" style="color: var(--b3-font-color13);">）</span>，相位偏移也会被限制在两个方向各 45°。
+
+但是，如果 I、Q 数据流是<span data-type="text" style="color: var(--b3-font-color13);">双极性信号</span>，也就是说，它们在负电压和正电压之间变化，那么我们的“幅度调制”实际上会在输入数据为逻辑低电平时<span data-type="text" style="color: var(--b3-font-color13);">反转</span>载波（**因为负输入电压与载波相乘会使载波反相**）。这意味着我们会得到四种 I/Q 状态：
+
+> 是的，**在数字通信语境中，**​**双极性信号****通常有两种状态**：正电压（如 `+1`）和负电压（如 `−1`）。
+>
+> 它与单极性信号的区别是：单极性信号通常在 `0` 和正电压之间变化，而双极性信号在负、正电压之间变化；这里的“两个状态”不包括 0 电压，除非具体编码另有规定。
+
+- I 正常，Q 正常
+- I 正常，Q 反相
+- I 反相，Q 正常
+- I 反相，Q 反相
+
+在这四种情况下，相加后会得到什么结果？（请注意，在下面的图中，波形频率经过了特定设置，使 x 轴上的秒数与相位偏移的度数相同。）
+
+![xref_01138](image16.jpeg)
+
+I 正常，Q 正常
+
+---
+
+![xref_01146](image17.jpeg)
+
+- I 正常，Q 反相
+
+---
+
+![xref_01147](image18.jpeg)
+
+- I 反相，Q 正常
+
+---
+
+![xref_01148](image19.jpeg)
+
+I 反相，Q 反相
+
+如图所示，这四种情况下的相加结果，正是 QPSK 信号所需的效果：相位分别偏移 45°、135°、225° 和 315°。
+
+---
+
+**总结：** 
+
+I/Q 信号传输指的是使用<span data-type="text" style="color: var(--b3-font-color13);">两</span>个<span data-type="text" style="color: var(--b3-font-color13);">频率相同</span>、<span data-type="text" style="color: var(--b3-font-color13);">相对相位相差 90°</span> 的<span data-type="text" style="color: var(--b3-font-color13);">正弦</span>信号。
+
+通过将经过幅度调制的 I/Q 信号相<span data-type="text" style="color: var(--b3-font-color13);">加</span>，可以实现幅度调制、相位调制和频率调制。
+
+正交调制指的是涉及 I/Q 信号的调制方式。
+
+QPSK 正交相移键控可以通过将 I、Q 载波分别与 +1 或 −1 相乘（乘数由输入数字数据决定），再将两者相加来实现。
+
+‍
+
+并且由 IQ 调制的原理我们可知，以下调制可以通过 IQ 调制实现
+
+‍
+
+![image](image20.png)
+
+IQ 不是图中的一种独立调制，而是一种**实现和表示方法**。它与图中的关系是：
+
+- **QAM：最直接**  
+  I、Q 两路共同改变载波的幅度和相位。
+- **PSK：IQ 的特殊情况**  
+  I、Q 取离散值；例如 QPSK 有四个固定相位状态。
+- **ASK：也可用 IQ 实现**  
+  例如只使用 I 路、令 Q=0，通过改变幅度调制。
+- **AM、PM：模拟情况下也可用 IQ 实现**。
+- **FSK：本质是改变频率，与 IQ 不是直接对应关系**，但可以用 IQ 数字合成实现。
+
+因此，图中与 IQ 最核心的对应是 **QAM 和 PSK**。
+
+---
+
+## PSK 相移键控
+
+> PSK, Phase-shift keying
+
+### QPSK 正交相移键控
+
+> QPSK signal generation
+>
+> https://www.etti.unibw.de/labalive/experiment/qpsksignalgeneration/
+
+> QPSK 是 **Quadrature Phase Shift Keying**，中文叫 **正交相移键控**，属于一种**数字相位调制**。
+
+![image](image21.png)​
+
+QPSK，四比特相位偏移调制，有时也称作四相位PSK、4-PSK、4-QAM，在坐标图上看是圆上四个对称的点。通过四个相位，QPSK可以编码2比特符号。图中采用[格雷码](https://zh.wikipedia.org/wiki/%E6%A0%BC%E9%9B%B7%E7%A0%81 "格雷码")来达到最小比特差错率（BER） — 是BPSK的两倍. 这意味着可以在BPSK系统[带宽](https://zh.wikipedia.org/wiki/%E5%B8%A6%E5%AE%BD "带宽")不变的情况下增大一倍数据传送速率或者在BPSK数据传送速率不变的情况下将所需带宽减半。
+
+数学分析表明，QPSK既可以在保证相同信号带宽的前提下倍增BPSK系统的数据速率，也可以在保证数据速率的前提下减半BPSK系统的带宽需求。在后一种情况下，QPSK的BER与BPSK系统的BER完全相同。
+
+![QPSK_Gray_Coded](image22.svg)​
+
+QPSK的坐标图，其比特对映符号方式用[格雷码](https://zh.wikipedia.org/wiki/%E6%A0%BC%E9%9B%B7%E7%A0%81 "格雷码")对映。
+
+由于无线电通信的带宽都是由FCC一类部门所事先分配规定的，QPSK较之于BPSK的优势便开始显现出来：QPSK系统在给定的带宽内可以在BER相同的情况下可以提供BPSK系统两倍的带宽。采取QPSK系统在实际工程上的代价是其接收设备要远比BPSK系统的接收设备复杂。然而，随着现代电子技术的迅猛发展，这种代价已经变得微不足道。
+
+较之BPSK系统，QPSK系统在接收端存在相位模糊的问题，所以实际应用中经常采取差分编码QPSK的方式。
+
+QPSK遵循如下公式：
+
+$$
+{\displaystyle s_{n}(t)={\sqrt {\frac {2E_{s}}{T_{s}}}}\cos \left(2\pi f_{c}t+(2n-1){\frac {\pi }{4}}\right),\quad n=1,2,3,4.}
+$$
+
+公式包含π/4、3π/4、5π/4与7π/4四个相位。
+
+---
+
+它的核心思想是：
+
+> **不改变载波中心频率，主要通过改变载波的相位来表示数字信息。**
+
+一个载波可以写成：
+
+$s(t)=A\cos(2\pi f_ct+\phi)$
+
+QPSK 让相位 $\phi$ 取 4 种不同状态，例如：
+
+$45^\circ,\ 135^\circ,\ 225^\circ,\ 315^\circ$
+
+![image](image23.png)​
+
+![qpsk-signal-generation-23](image24.png)
+
+因为有 4 种状态，所以一次可以表示：
+
+$\log_2 4=2\text{ bit}$
+
+例如：
+
+|比特|相位|
+| ------| ------|
+|00|$45^\circ$|
+|01|$135^\circ$|
+|11|$225^\circ$|
+|10|$315^\circ$|
+
+因此：
+
+$\boxed{\text{QPSK 每个符号可以携带 2 bit 信息}}$
+
+‍
+
+---
+
 # FT 傅里叶变换
 
 > FT  - Fourier Transform
@@ -1677,7 +1948,7 @@ x(t)=
 +\cdots
 $$
 
-![Google Chrome 2026-09-15 14.08.52](image14.png)
+![Google Chrome 2026-09-15 14.08.52](image25.png)
 
 所以频谱分析仪看到的是：
 
@@ -1709,15 +1980,75 @@ $$
 
 ---
 
+## CW 连续波
+
+**非调制连续波信号（CW，Continuous Wave）** ，通常是指一种不进行脉冲调制、持续发射的连续波信号。在雷达、频谱仪、信号发生器和射频测试领域都很常见。
+
+![Activity: Circuit Simulation with LTspice - ADALM1000 [Analog Devices Wiki]](https://images.openai.com/static-rsc-4/CCRotJYBENZEAvBFg714k9wCtxERNsF1nzFipuLrrwTYeKiCDjEB0eemd3Ewq7yura_l4pmqnPey5BlYB1LOL_C0C8RTIEaSrCjoBjgfMkxWbctapkwaqe4BCDE7Js4x2cOEIgqHkquHGG2Q-E8PHIMGITw7sHJ_6zbjrOjTYv4?purpose=inline)
+
+CW 信号最典型的形式是持续输出固定频率、固定幅度的正弦波：
+
+$$
+x(t)=A\sin(2\pi ft+\varphi)
+$$
+
+其中：
+
+- $A$：信号幅度
+- $f$：信号频率，例如 10 MHz
+- $\varphi$：初始相位
+- $t$：时间
+
+只要信号源持续工作，波形就会连续输出，不会像脉冲信号那样周期性地开启和关闭。
+
+‍
+
+**CW 与脉冲信号的区别**
+
+![image](image26.png)
+
+**CW 连续波**
+
+信号持续存在，通常具有固定频率和幅度，适合测量频率响应、功率和射频链路特性。
+
+![image](image27.png)
+
+**脉冲信号**
+
+信号以一定的脉冲宽度和重复周期出现，<span data-type="text" style="color: var(--b3-font-color13);">脉冲之间可能没有信号</span>，常见于脉冲雷达和数字通信测试。
+
+‍
+
+**CW 是否等于未调制信号？**
+
+严格来说，不完全等同。
+
+|信号类型|特征|
+| :----------: | :----------------------------: |
+|未调制CW|频率和幅度基本恒定的连续载波|
+|AM调制信号|载波幅度随调制信号变化|
+|FM调制信号|载波瞬时频率随调制信号变化|
+|脉冲信号|载波按设定的时间间隔发射|
+
+CW 在一些射频测试场景中专指未调制的连续载波；但在雷达等其他领域，CW 也可能泛指连续发射的波形，包括经过调制的连续波，例如 FMCW（调频连续波）。
+
+‍
+
+---
+
 ## 基波与谐波
 
 可以把**==基波==**​==理解成“主频率”==，把**==谐波==**​==理解成“这个主频率的整数倍频率成分”==。
 
 假设一个周期信号的最低主要频率是：
 
-$f_0=1\text{ kHz}$那么：
+$f_0=1\text{ kHz}$  
 
-$1f_0=1\text{ kHz}$叫**基波（Fundamental）** 。
+那么：
+
+$1f_0=1\text{ kHz}$  
+
+叫**基波（Fundamental）** 。
 
 而：
 
@@ -1766,7 +2097,7 @@ $\boxed{\text{第 }n\text{ 次谐波}=n f_0}$
 
 $x(t)=\sin(2\pi\cdot1000t)$  
 
-![image](image15.png)
+![image](image28.png)
 
 它就是一个非常纯的 1 kHz 正弦波。
 
@@ -1977,7 +2308,323 @@ $$
 >
 > **频谱仪问：“信号里面有哪些频率？各有多强？”**
 
+---
+
+## 混叠
+
+> https://www.tek.com.cn/support/faqs/what-aliasing-and-how-do-i-detect-it-and-fix-it-my-oscilloscope
+
+时间周期上的混叠
+
+举例来说：[太阳](https://zh.wikipedia.org/wiki/%E5%A4%AA%E9%99%BD "太阳")在天空由东往西移动，两次的日出间隔了24小时。若某个人每23小时对天空拍张照片，太阳会好像由西向东移动，并且日出周期由24小时转变成552小时（24×23=552）。相同的现象也会发生在高速旋转的车轮钢圈，视觉上看到的旋转方向和实际上相反。这就是[时间混叠](https://zh.wikipedia.org/w/index.php?title=%E6%99%82%E9%96%93%E6%B7%B7%E7%96%8A&action=edit&redlink=1 "时间混叠（页面不存在）")。
+
+![Aliasing-plot](image29.png)
+
+两个不同的正弦波却有相同的样本值。蓝色正弦波的频率${\displaystyle Fb\,}$较低；红色正弦波的频率${\displaystyle Fr\,}$较高。
+
+混叠是一个[音频](https://zh.wikipedia.org/wiki/%E9%9F%B3%E8%A8%8A "音频")与[视频](https://zh.wikipedia.org/wiki/%E8%A6%96%E8%A8%8A "视频")上的最大问题。例如在音乐上信号中会含有超出人耳听力范围的高频成分，如果音乐信号取样低于32000取样/秒(赫兹)任何等于16000赫兹或以上的信号(奈奎斯特准则)将在数字转模拟转换器(DAC)中造成混叠现象。为了防止这样的混叠现象发生，[抗混叠滤波器](https://zh.wikipedia.org/wiki/%E6%8A%97%E6%B7%B7%E7%96%8A%E6%BF%BE%E6%B3%A2%E5%99%A8 "抗混叠滤波器")可以用来移除高于奈圭斯特频率以上的混叠噪声，或是要求音频内容的取样保持在两倍人耳最高频率极限之上。因此，可以参照[取样率](https://zh.wikipedia.org/wiki/%E5%8F%96%E6%A8%A3%E7%8E%87 "取样率")中不同的运用有着不同的取样率，除人声传输的应用之外，在记录音乐、声音的应用中大多都是采用高于40kHz的取样频率以确保能够完整还原。
+
+在[视频](https://zh.wikipedia.org/wiki/%E8%A6%96%E8%A8%8A "视频")中时间混叠的造成是来自于[帧率](https://zh.wikipedia.org/wiki/%E5%B8%A7%E7%8E%87 "帧率")的限制，进而造成车轮看起来倒转但实际上正转的[车轮效应](https://zh.wikipedia.org/w/index.php?title=%E8%BB%8A%E8%BC%AA%E6%95%88%E6%87%89&action=edit&redlink=1 "车轮效应（页面不存在）")(wagon-wheel effect)，在这个现象中逆转的现象可以以负频率解释。为了解决视频中时间混叠的现象，可以使用[抗混叠滤波器](https://zh.wikipedia.org/wiki/%E6%8A%97%E6%B7%B7%E7%96%8A%E6%BF%BE%E6%B3%A2%E5%99%A8 "抗混叠滤波器")来减少，或者是要求视频内容的帧率保持在两倍视觉暂留频率之上。
+
+---
+
 ‍
+
+ADC 输出信号的“混叠（Aliasing）”指的是：
+
+> **ADC 采样率不够高时，原本不同的模拟频率在采样后变成了同一个数字频率，因此无法再区分。**
+
+假设 ADC 采样率：
+
+$f_s=100\text{ MHz}$  
+
+那么奈奎斯特频率是：
+
+$f_N=\frac{f_s}{2}=50\text{ MHz}$  
+
+对于普通实信号采样，最直观的无混叠范围就是：
+
+$\boxed{0\sim50\text{ MHz}}$  
+
+如果输入一个：
+
+$f_{in}=30\text{ MHz}$  
+
+ADC 会正确看到 30 MHz。
+
+但如果输入：
+
+$f_{in}=70\text{ MHz}$  
+
+由于 70 MHz 超过了 50 MHz，采样后它会“<span data-type="text" style="color: var(--b3-font-color13);">折回来</span>”：
+
+$f_{alias}=100-70=30\text{ MHz}$  
+
+所以 ADC 输出的数据拿去 FFT 后，你看到的竟然还是：
+
+$\boxed{30\text{ MHz}}$  
+
+也就是说：
+
+```text
+真实模拟输入：
+
+30 MHz  ─────────────┐
+                     ├── ADC 输出都可能表现成 30 MHz
+70 MHz  ─────────────┘
+```
+
+这就是“混叠”——**两个不同的模拟频率，采样以后分不出来了。**
+
+### 产生原因
+
+采样以后，模拟频谱会以 $f_s$ 为间隔周期复制：
+
+```text
+        原频谱             复制频谱
+           ↓                  ↓
+----|----------|----------|----------|----→ f
+   -50         50        100
+            fs/2          fs
+```
+
+如果原信号超过：
+
+$\frac{f_s}{2}$  
+
+相邻的频谱副本就会互相重叠，于是高频成分“折叠”进低频区域。
+
+因此经常把它称为：
+
+$\boxed{\text{频谱折叠}}$  
+
+---
+
+**例子**
+
+假设：
+
+$f_s=100\text{ MHz}$  
+
+那么：
+
+|模拟输入频率|ADC/FFT 中看到|
+| -------------: | ---------------: |
+|10 MHz|10 MHz|
+|30 MHz|30 MHz|
+|50 MHz|50 MHz|
+|60 MHz|40 MHz|
+|70 MHz|30 MHz|
+|90 MHz|10 MHz|
+|110 MHz|10 MHz|
+|130 MHz|30 MHz|
+
+比如：
+
+$90\text{ MHz}$  
+
+会变成：
+
+$100-90=10\text{ MHz}$  
+
+所以一个真正的 **90 MHz 干扰**，最后可能在 FFT 中冒充成 **10 MHz 信号**。
+
+### 这就是为什么 ADC 前面要有低通滤波器
+
+![预览 2026-09-24 10.25.45](image30.png)
+
+你上一张图里 ADC 前面的：
+
+```text
+模拟信号
+   ↓
+低通滤波器
+   ↓
+采样
+   ↓
+ADC
+```
+
+这个低通滤波器一个非常重要的作用就是：
+
+$\boxed{\text{Anti-Aliasing Filter，抗混叠滤波器}}$  
+
+它提前把超过 ADC 可正确采样范围的高频信号压下去。
+
+例如：
+
+$f_s=100\text{ MHz}$  
+
+那么 ADC 前面会尽量避免让强的：
+
+$>50\text{ MHz}$  
+
+信号直接进入 ADC，否则这些信号可能折叠到：
+
+$0\sim50\text{ MHz}$  
+
+里面，形成假的频谱。
+
+所以一句话记住：
+
+$\boxed{ \text{混叠 = 高频信号采样后折叠成低频信号} }$  
+
+而最麻烦的是：
+
+> **一旦 ADC 已经发生混叠，后面的 FFT 通常无法知道这个 30 MHz 到底原来就是 30 MHz，还是由 70 MHz、130 MHz 等频率折叠过来的。**
+
+所以抗混叠必须主要在 **ADC 采样之前**处理。
+
+‍
+
+---
+
+# 滤波器式频谱分析仪
+
+滤波器式频谱分析仪是最直观的一类频谱分析方法：
+
+> **利用窄带带通滤波器，只允许某一小段频率通过，再测量该频段内的信号功率，从而得到频谱。**
+
+基本思想可以表示为：
+
+```text
+   输入信号
+   ↓
+ 窄带带通滤波器
+   ↓
+ 检波 / 测量幅度
+   ↓
+  得到该频率附近的功率
+```
+
+如果不断改变滤波器的中心频率：
+
+$f_1 \rightarrow f_2 \rightarrow f_3 \rightarrow \cdots$  
+
+就可以逐步扫描整个频率范围，最终得到：
+
+$\text{频率} \rightarrow \text{功率}$  
+
+也就是频谱。
+
+滤波器式分析仪通常可以有两种思路：
+
+- **滤波器组（Filter Bank）** ：使用很多不同中心频率的窄带滤波器，同时覆盖不同频段。
+
+  ![image](image31.png)​
+- **可调谐滤波器（Tunable Filter）** ：使用一个窄带滤波器，**不断改变中心频率**进行扫描。
+
+  ![image](image32.png)
+
+其中，可调谐滤波器方案看起来很简单，但对于**宽频率范围、高分辨率频谱分析仪**并不理想。一个重要原因就是实际可调滤波器往往具有近似固定的**相对带宽**：
+
+$\frac{BW}{f_c}\approx \text{常数}$  
+
+因此随着中心频率 $f_c$ 升高，绝对带宽 $BW$ 也会变大，很难在整个输入频率范围内保持固定且很窄的分辨率带宽。
+
+---
+
+也就是说：
+
+> **不能简单地在频谱仪前端放一个很窄的可调带通滤波器，然后让它从低频一路扫到高频来完成频谱分析。**
+
+关键原因在“**相对带宽固定，但绝对带宽会随中心频率变化**”。
+
+假设一个可调滤波器的<span data-type="text" style="color: var(--b3-font-color13);">相对带宽</span>固定为：
+
+$\frac{BW}{f_c}=1\%$  
+
+那么<span data-type="text" style="color: var(--b3-font-color10); font-size: 24px;">中心频率 </span>$f_c$<span data-type="text" style="color: var(--b3-font-color10); font-size: 24px;"> </span>改变时，**绝对带宽**：
+
+$BW=0.01f_c$  
+
+就跟着变化。
+
+例如：
+
+|中心频率|相对带宽|绝对带宽|
+| ---------: | ---------: | ---------: |
+|1 MHz|1%|10 kHz|
+|100 MHz|1%|1 MHz|
+|1 GHz|1%|10 MHz|
+
+于是你会发现：
+
+> 扫到越高的频率，滤波器实际通过的频率范围越宽。
+
+但频谱分析仪通常希望 **RBW 是固定的绝对带宽**，例如：
+
+$RBW=10\text{ kHz}$  
+
+那么无论你现在测：
+
+$10\text{ MHz}$  
+
+还是：
+
+$1\text{ GHz}$  
+
+都希望分辨率还是大约：
+
+$10\text{ kHz}$  
+
+而不是越扫越宽。
+
+这就是为什么经典频谱仪不靠一个“超窄可调 RF 滤波器”直接扫完整个频段，而是用：
+
+```text
+RF 输入
+   ↓
+Mixer + 可调 LO
+   ↓
+固定 IF
+   ↓
+固定窄带 IF / RBW Filter
+```
+
+假设固定 IF 是：
+
+$f_{IF}=100\text{ MHz}$  
+
+RBW Filter 固定为：
+
+$10\text{ kHz}$  
+
+那么无论当前 RF 是：
+
+$500\text{ MHz}$  
+
+还是：
+
+$2\text{ GHz}$  
+
+都通过调 LO，把它搬到：
+
+$100\text{ MHz}$  
+
+然后统一用这个：
+
+$10\text{ kHz}$  
+
+的 IF 滤波器分析。
+
+所以本质是：
+
+$\boxed{\text{不要调窄带滤波器，而是调 LO，把信号搬到固定滤波器}}$  
+
+这就是**扫描调谐型超外差频谱分析仪**非常核心的设计思想。
+
+另外别和 **Preselector（预选器）** 混淆：<span data-type="text" style="color: var(--b3-font-color13);">预选器确实可以是可调滤波器，但它通常比较宽，主要负责挡掉带外信号和镜像</span>；真正决定频率分辨率的窄带滤波器是后面的 **IF/RBW Filter**。
+
+‍
+
+这也是后来频谱分析仪广泛采用：
+
+$\boxed{\text{Mixer + 可调 LO + 固定 IF 窄带滤波器}}$  
+
+也就是**扫描调谐型超外差频谱分析仪**的重要原因。
+
+---
 
 # `超外差频谱分析仪`​
 
@@ -2029,7 +2676,7 @@ $$
 
 横轴 \= 频率，纵轴 \= 幅度/功率
 
-![image](image16.png)
+![image](image33.png)
 
 ​`图 2-1. 典型超外差频谱分析仪的结构框图`​
 
@@ -2105,7 +2752,7 @@ $$
 
 ## 本地振荡器（LO，Local Oscillator）
 
-![image](image17.png)
+![image](image34.png)
 
 本地振荡器==用于产生稳定、可调节的正弦波信号==，是频谱仪完成频率扫描的关键部件。
 
@@ -2222,7 +2869,7 @@ $$
 
 RF 衰减器位于输入端，用于==控制进入后级电路的信号功率==。
 
-![image](image18.png)
+![image](image35.png)
 
 射频信号可能具有较大的输入功率，如果直接进入混频器或放大器，可能导致器件进入非线性区域，产生压缩和失真。因此，频谱分析仪通常通过设置不同的衰减值，例如：
 
@@ -2519,9 +3166,9 @@ RBW小于等于两个信号的频率间隔，可以分辨出两个信号峰。�
 
 > 双音测试（Two-Tone Test）是==向电子或音频系统输入两个==​==**频率相近**==​==的正弦波信号，用来评估其==​==**线性度**==​==和==​==**互调失真（IMD）**==​==的关键测试方法==。
 
-![v2-6708bcf37e348aed25a2d92a77f864b9_r](image19.jpg)​
+![v2-6708bcf37e348aed25a2d92a77f864b9_r](image36.jpg)​
 
-![v2-88926aed30fbfc25c09959ee2cdea205_r](image20.jpg)​
+![v2-88926aed30fbfc25c09959ee2cdea205_r](image37.jpg)​
 
  *•RBW是中频滤波器的3dB带宽。*   
  *•分辨带宽可自动和手动设置，自动状态下，RBW由测量扫频宽度（Span）决定*  
@@ -2538,7 +3185,7 @@ RBW小于等于两个信号的频率间隔，可以分辨出两个信号峰。�
 
 通过低电平信号的测量，可以看到使用窄RBW的优点。==在使用窄RBW时，频谱分析仪显示出较低的平均噪声(DANL)，且动态范围增加，灵敏度有所改进。==在图1中，把RBW从100 kHz改变到10 kHz将能更好地分辨-95 dBm 的信号。
 
-![image](image21.png)
+![image](image38.png)
 
 图1. 100KHz RBW 和10KHz RBW的测试结果
 
@@ -2546,11 +3193,11 @@ RBW小于等于两个信号的频率间隔，可以分辨出两个信号峰。�
 
 ==窄RBW设置的一项重要缺点是扫频速度。更宽的RBW设置在给定频率范围内允许更快的扫频==。图2和图3 比较了在200 MHz 频率范围内，10 kHz 和3 kHz RBW 的扫频时间。
 
-![image](image22.png)
+![image](image39.png)
 
 图2. 10KHz RBW的扫描时间为7.627S
 
-![image](image23.png)
+![image](image40.png)
 
 图3. 3KHz RBW的扫描时间为26.79S
 
@@ -2564,7 +3211,7 @@ RBW小于等于两个信号的频率间隔，可以分辨出两个信号峰。�
 
 **中频 IF 不能随便选在待测 RF 频率范围里面，否则会出现“**​**==中频直通==**​ **”问题。**
 
-![ChatGPT Image 2026年9月20日 09_11_48](image24.png)
+![ChatGPT Image 2026年9月20日 09_11_48](image41.png)
 
 假设频谱仪要测：
 
@@ -2762,11 +3409,11 @@ $\boxed{A(t)}$
 
 可以直观理解为：
 
-![C_Envelope_follower](image25.png)
+![C_Envelope_follower](image42.png)
 
 信号和它的包络（红色）
 
-![Analytic](image26.svg)
+![Analytic](image43.svg)
 
 信号（蓝）与其[解析信号](https://zh.wikipedia.org/wiki/%E8%A7%A3%E6%9E%90%E4%BF%A1%E5%8F%B7 "解析信号")的幅度（红），显示了包络效果
 
@@ -2786,7 +3433,7 @@ $\boxed{A(t)}$
 
 包络检波后的信号可能包含明显的噪声和快速波动，例如：
 
-![image](image27.png)
+![image](image44.png)
 
 ---
 
